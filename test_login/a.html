@@ -1,0 +1,55 @@
+<html>
+
+<head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+ $(document).ready(function(){
+ $("#tables").change(function(){
+         $("#1").val($("#tables option:selected").text()) ;
+         $("#2").val($("#tables option:selected").text()) ;
+         $("#3").val($("#tables option:selected").text()) ;
+});
+});
+</script>
+
+</head>
+
+<body>
+
+<select name="formselecttable" id="tables">
+   <option value="">select...</option>
+   <option value="customer">customer</option>
+   <option value="employee">employee</option>
+   <option value="invoice">invoice</option>
+   <option value="offer">offer</option>
+   <option value="product">product</option>
+   <option value="retaildistributioncenter">retaildistributioncenter</option>
+   <option value="showroom">showroom</option>
+   <option value="stock">stock</option>
+   <option value="stock_description">stock_description</option>
+</select>
+  
+<br><br>
+
+<form action="insertforms.php" method="post">
+<input type="submit" name="insert"  value="insert" />
+<input type="hidden" id="1" name="formselecttable" value= ""  /> 
+</form>
+
+<form action="showprimary2.php" method="post">
+<input type="submit" name="delete"  value="delete" />
+<input type="hidden" id= "2" name="formselecttable" value="" />
+</form>
+
+<form action="show_primary.php" method="post">
+<input type="submit" name="update"  value="update" />
+<input type="hidden" id="3" name="formselecttable" value="" />
+</form>
+
+<br><br>
+
+</body>
+
+</html>
